@@ -92,32 +92,32 @@
                 Width: $scope.width,
                 Height: $scope.height
             };
-
-            if (modelBook.Title == undefined) {
+            debugger;
+            if (modelBook.Title == undefined || modelBook.Title === "") {
                 $("html, body").animate({ scrollTop: 0 }, "slow");
                 $scope.hasMessage = true;
                 $scope.message = "O tiítulo é obrigatório!";
                 return;
             }
-            if (modelBook.Description == undefined) {
+            if (modelBook.Description == undefined || modelBook.Description === "") {
                 $("html, body").animate({ scrollTop: 0 }, "slow");
                 $scope.hasMessage = true;
                 $scope.message = "A descrição é obrigatória!";
                 return;
             }
-            if (modelBook.Author == undefined) {
+            if (modelBook.Author == undefined || modelBook.Author === "") {
                 $("html, body").animate({ scrollTop: 0 }, "slow");
                 $scope.hasMessage = true;
                 $scope.message = "O autor é obrigatório!";
                 return;
             }
-            if (modelBook.Launch == undefined) {
+            if (modelBook.Launch == undefined || modelBook.Launch === "") {
                 $("html, body").animate({ scrollTop: 0 }, "slow");
                 $scope.hasMessage = true;
                 $scope.message = "A data de lançamento é obrigatória!";
                 return;
             }
-            if (modelBook.Language == undefined) {
+            if (modelBook.Language == undefined || modelBook.Language === "") {
                 $("html, body").animate({ scrollTop: 0 }, "slow");
                 $scope.hasMessage = true;
                 $scope.message = "A linguagem é obrigatória!";
