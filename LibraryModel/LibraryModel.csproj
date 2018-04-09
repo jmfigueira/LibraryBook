@@ -7,8 +7,8 @@
     <ProjectGuid>{B5671E91-5492-41DC-88B5-56F8A29C60C2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LibraryModelORM</RootNamespace>
-    <AssemblyName>LibraryModelORM</AssemblyName>
+    <RootNamespace>LibraryModel</RootNamespace>
+    <AssemblyName>LibraryModel</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

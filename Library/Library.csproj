@@ -224,9 +224,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LibraryModelORM\LibraryModelORM.csproj">
+    <ProjectReference Include="..\LibraryModel\LibraryModel.csproj">
       <Project>{b5671e91-5492-41dc-88b5-56f8a29c60c2}</Project>
-      <Name>LibraryModelORM</Name>
+      <Name>LibraryModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

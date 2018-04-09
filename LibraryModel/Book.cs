@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryModelORM
+namespace LibraryModel
 {
     using System;
     using System.Collections.Generic;
