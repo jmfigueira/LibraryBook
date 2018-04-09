@@ -1,0 +1,35 @@
+﻿<div ng-app="library" ng-controller="bookController">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"><a ng-click="ordena('Title')">Título</a></th>
+                <th scope="col"><a ng-click="ordena('Description')">Descrição</a></th>
+                <th scope="col"><a ng-click="ordena('Launch')">Ano de Lançamento</a></th>
+                <th scope="col"><a ng-click="ordena('Author')">Autor</a></th>
+                <th scope="col"><a ng-click="ordena('Language')">Linguagem</a></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="book in books">
+                <td scope="row">{{book.Title}}</td>
+                <td scope="row">{{book.Description}}</td>
+                <td scope="row">{{book.Launch | date: 'dd/MM/yyyy'}}</td>
+                <td scope="row">{{book.Author}}</td>
+                <td scope="row">{{book.Language}}</td>
+                <td scope="row">
+                    <a ng-click="edit(book.Id)">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                </td>
+                <td scope="row">
+                    <a confirmed-click="delete(book.Id)"
+                       ng-confirm-click="Deseja realmente apagar o item?">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
