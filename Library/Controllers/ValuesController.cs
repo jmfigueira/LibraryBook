@@ -13,7 +13,7 @@ namespace Library.Controllers
         // GET api/values
         public IEnumerable<Book> GetAll(string value, string type)
         {
-            if (type == " ASC")
+            if (type == "ASC")
             {
                 switch (value)
                 {

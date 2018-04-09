@@ -6,12 +6,15 @@
         $scope.type = "Novo Livro";
         $scope.isEdit = false;
         $scope.typOrder = false;
-        $scope.language = "PT"; 
-
+        $scope.language = "PT";
+        $scope.hasMessage = false;
+        $scope.loading = true;
+        
         $http({
             method: 'GET',
             url: serverConnection + 'api/values?value=Title&type=ASC'
         }).then(function (success) {
+            $scope.loading = false;
             $scope.books = success.data;
         }, function () { });
 
@@ -56,7 +59,7 @@
 
         $scope.ordena = function (type) {
 
-            var order = $scope.typOrder === false ? " DESC" : " ASC";
+            var order = $scope.typOrder === false ? "DESC" : "ASC";
 
             $scope.typOrder = !$scope.typOrder;
 
@@ -88,35 +91,51 @@
             };
 
             if (modelBook.Title == undefined) {
-                alert("O tiítulo é obrigatório!");
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $scope.hasMessage = true;
+                $scope.message = "O tiítulo é obrigatório!";
                 return;
             }
             if (modelBook.Description == undefined) {
-                alert("A descrição é obrigatória!");
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $scope.hasMessage = true;
+                $scope.message = "A descrição é obrigatória!";
                 return;
             }
             if (modelBook.Author == undefined) {
-                alert("O autor é obrigatório!");
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $scope.hasMessage = true;
+                $scope.message = "O autor é obrigatório!";
                 return;
             }
             if (modelBook.Launch == undefined) {
-                alert("A data de lançamento é obrigatória!");
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $scope.hasMessage = true;
+                $scope.message = "A data de lançamento é obrigatória!";
                 return;
             }
             if (modelBook.Language == undefined) {
-                alert("A linguagem é obrigatória!");
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $scope.hasMessage = true;
+                $scope.message = "A linguagem é obrigatória!";
                 return;
             }
             if (!isNumber(modelBook.Price == undefined ? 0 : modelBook.Price)) {
-                alert("O campo preço é númerico!");
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $scope.hasMessage = true;
+                $scope.message = "O campo preço é númerico!";
                 return;
             }
             if (!isNumber(modelBook.Width == undefined ? 0 : modelBook.Width)) {
-                alert("O campo largura é númerico!");
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $scope.hasMessage = true;
+                $scope.message = "O campo largura é númerico!";
                 return;
             }
             if (!isNumber(modelBook.Height == undefined ? 0 : modelBook.Height)) {
-                alert("O campo altura é númerico!");
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $scope.hasMessage = true;
+                $scope.message = "O campo altura é númerico!";
                 return;
             }
 
