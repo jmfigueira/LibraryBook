@@ -92,7 +92,6 @@
                 Width: $scope.width,
                 Height: $scope.height
             };
-            debugger;
             if (modelBook.Title == undefined || modelBook.Title === "") {
                 $("html, body").animate({ scrollTop: 0 }, "slow");
                 $scope.hasMessage = true;

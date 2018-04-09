@@ -13,13 +13,13 @@
         </thead>
         <tbody>
             <tr ng-repeat="book in books">
-                <td>{{book.Title}}</td>
-                <td>{{book.Description}}</td>
-                <td>{{book.Launch | date: 'dd/MM/yyyy'}}</td>
-                <td>{{book.Author}}</td>
-                <td>{{book.Language}}</td>
-                <td><a ng-click="edit(book.Id)"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                <td><a confirmed-click="delete(book.Id)" ng-confirm-click="Deseja realmente apagar o item?"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <td class="breakLine">{{book.Title}}</td>
+                <td class="breakLine">{{book.Description}}</td>
+                <td class="breakLine">{{book.Launch | date: 'dd/MM/yyyy'}}</td>
+                <td class="breakLine">{{book.Author}}</td>
+                <td class="breakLine">{{book.Language}}</td>
+                <td class="breakLine"><a ng-click="edit(book.Id)"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td class="breakLine"><a confirmed-click="delete(book.Id)" ng-confirm-click="Deseja realmente apagar o item?"><span class="glyphicon glyphicon-trash"></span></a></td>
             </tr>
         </tbody>
     </table>

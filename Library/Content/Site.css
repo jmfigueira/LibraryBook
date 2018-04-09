@@ -45,3 +45,7 @@ textarea {
     left: 40%;
     position: relative;
 }
+
+.breakLine {
+    word-break: break-all;
+}
