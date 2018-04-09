@@ -47,7 +47,7 @@
             }).then(function () {
                 $http({
                     method: 'GET',
-                    url: serverConnection + 'api/values'
+                    url: serverConnection + 'api/values?value=Title&type=ASC'
                 }).then(function (success) {
                     $scope.books = success.data;
                 }, function () { });
