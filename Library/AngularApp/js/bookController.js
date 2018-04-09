@@ -16,6 +16,7 @@
         }).then(function (success) {
             $scope.loading = false;
             $scope.books = success.data;
+            $scope.noData = $scope.books == undefined || $scope.books.length === 0 ? true : false;
         }, function () { });
 
         if ($location.absUrl().split("idbook=")[1] != undefined) {
@@ -53,6 +54,7 @@
                     url: serverConnection + 'api/values?value=Title&type=ASC'
                 }).then(function (success) {
                     $scope.books = success.data;
+                    $scope.noData = $scope.books == undefined || $scope.books.length === 0 ? true : false;
                 }, function () { });
             }, function () { });
         };
@@ -68,6 +70,7 @@
                 url: serverConnection + 'api/values?value=' + type + "&type=" + order
             }).then(function (success) {
                 $scope.books = success.data;
+                $scope.noData = $scope.books == undefined || $scope.books.length === 0? true : false;
             }, function () { });
         }
 
