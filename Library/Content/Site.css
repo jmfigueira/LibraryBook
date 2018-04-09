@@ -39,3 +39,9 @@ textarea {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.nodata {
+    top: 50%;
+    left: 40%;
+    position: relative;
+}
