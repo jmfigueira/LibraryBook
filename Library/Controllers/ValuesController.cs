@@ -13,7 +13,38 @@ namespace Library.Controllers
         // GET api/values
         public IEnumerable<Book> GetAll(string value, string type)
         {
-            return _repoBookEntities.Books.ToList().OrderBy(x => x.Title);
+            if (type == " ASC")
+            {
+                switch (value)
+                {
+                    case "Title":
+                        return _repoBookEntities.Books.ToList().OrderBy(x => x.Title);
+                    case "Description":
+                        return _repoBookEntities.Books.ToList().OrderBy(x => x.Description);
+                    case "Launch":
+                        return _repoBookEntities.Books.ToList().OrderBy(x => x.Launch);
+                    case "Author":
+                        return _repoBookEntities.Books.ToList().OrderBy(x => x.Author);
+                    default:
+                        return _repoBookEntities.Books.ToList().OrderBy(x => x.Language);
+                }
+            }
+            else
+            {
+                switch (value)
+                {
+                    case "Title":
+                        return _repoBookEntities.Books.ToList().OrderByDescending(x => x.Title);
+                    case "Description":
+                        return _repoBookEntities.Books.ToList().OrderByDescending(x => x.Description);
+                    case "Launch":
+                        return _repoBookEntities.Books.ToList().OrderByDescending(x => x.Launch);
+                    case "Author":
+                        return _repoBookEntities.Books.ToList().OrderByDescending(x => x.Author);
+                    default:
+                        return _repoBookEntities.Books.ToList().OrderByDescending(x => x.Language);
+                }
+            }
         }
 
         // GET api/values/5

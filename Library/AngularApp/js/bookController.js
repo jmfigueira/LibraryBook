@@ -68,6 +68,10 @@
             }, function () { });
         }
 
+        function isNumber(n) {
+            return !isNaN(parseFloat(n)) && isFinite(n);
+        }
+
         $scope.save = function () {
 
             var modelBook = {
@@ -82,6 +86,39 @@
                 Width: $scope.width,
                 Height: $scope.height
             };
+
+            if (modelBook.Title == undefined) {
+                alert("O tiítulo é obrigatório!");
+                return;
+            }
+            if (modelBook.Description == undefined) {
+                alert("A descrição é obrigatória!");
+                return;
+            }
+            if (modelBook.Author == undefined) {
+                alert("O autor é obrigatório!");
+                return;
+            }
+            if (modelBook.Launch == undefined) {
+                alert("A data de lançamento é obrigatória!");
+                return;
+            }
+            if (modelBook.Language == undefined) {
+                alert("A linguagem é obrigatória!");
+                return;
+            }
+            if (!isNumber(modelBook.Price == undefined ? 0 : modelBook.Price)) {
+                alert("O campo preço é númerico!");
+                return;
+            }
+            if (!isNumber(modelBook.Width == undefined ? 0 : modelBook.Width)) {
+                alert("O campo largura é númerico!");
+                return;
+            }
+            if (!isNumber(modelBook.Height == undefined ? 0 : modelBook.Height)) {
+                alert("O campo altura é númerico!");
+                return;
+            }
 
             if ($scope.isEdit) {
                 $http.put(serverConnection + 'api/values/' + $location.absUrl().split("idbook=")[1], modelBook).then(function () { $window.location.href = '/Book/ListBook'; }, function () { alert("Houve um problema ao atualizar o novo livro."); });
